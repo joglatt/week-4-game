@@ -1,0 +1,41 @@
+body {
+  background-color: #91aa9d;
+}
+
+header {
+  text-align: center;
+  width: 42%;
+  margin: 0 auto 10px;
+  font-size: 4.0vw;
+  color: #3e606f;
+  background-color: #fcfff5;
+}
+.container {
+  text-align: center;
+  width: 42%;
+  border: 1px black solid;
+  margin: 0 auto 10px;
+  background-color: #d1dbbd;
+}
+.display {
+  text-align: center;
+  width: 42%;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+#text {
+  width: 85%;
+  margin: 0 auto 3px;
+  color: #3e606f;
+  font-size: 1.5vw;
+}
+.display {
+  margin: 0 auto 3px;
+  font-size: 1.5vw;
+}
+
+.crystal{
+    margin:5px;
+}

@@ -11,22 +11,41 @@
 </head>
 
 <body>
+    <div id="head-con"></div>
+
     <header>Crystal Confusion</header>
-    
-    <div class="button-con">
-        <button class="crystal" id="crystal-1"><img src="assets/images/crystal1.jpg" alt="crystal"></button>
-        <button class="crystal" id="crystal-2"><img src="assets/images/crystal2.jpg" alt="crystal"></button>
-        <button class="crystal" id="crystal-3"><img src="assets/images/crystal3.jpg" alt="crystal"></button>
-        <button class="crystal" id="crystal-4"><img src="assets/images/crystal4.jpg" alt="crystal"></button>
     </div>
-    <div>
-<div id="random-num"></div>
-<div id="total"></div>
-<div id="wins"></div>
-<div id="losses"></div>
+    <div class="container">
+        <div id="text">
+            <p>You will be given a random number at the start of the game There are four crystals below. By clicking on a crystal
+                you will add a specific amount of points to your total score. </p>
+            <p>You win the game by matching your score to the random number, you lose the game if your total score goes above
+                the random number. The value of each crystal is hidden from you until you click on it. Each time when the
+                game starts, the game will change the value of each crystal.
+            </p>
+        </div>
+        <div class="button-con">
+            <button class="crystal" id="crystal-1">
+                <img src="assets/images/crystal1.jpg" alt="crystal">
+            </button>
+            <button class="crystal" id="crystal-2">
+                <img src="assets/images/crystal2.jpg" alt="crystal">
+            </button>
+            <button class="crystal" id="crystal-3">
+                <img src="assets/images/crystal3.jpg" alt="crystal">
+            </button>
+            <button class="crystal" id="crystal-4">
+                <img src="assets/images/crystal4.jpg" alt="crystal">
+            </button>
+        </div>
+        <div class="display">
+            <div class="stats" id="random-num"></div>
+            <div class="stats" id="total"></div>
+            <div class="stats" id="wins"></div>
+            <div class="stats" id="losses"></div>
 
+        </div>
     </div>
-
     <script type="text/javascript" src="logic.js"></script>
 </body>
 

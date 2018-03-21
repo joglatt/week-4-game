@@ -30,7 +30,8 @@ img {
   width:95%;
   margin: 0 auto 3px;
   color: #3e606f;
-  font-size: 2.0vw;
+  font-size: 2.0vw; 
+  padding-top:5px;
 }
 .display {
   margin: 0 auto 3px;

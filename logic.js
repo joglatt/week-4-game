@@ -19,50 +19,61 @@ function setNumbers() {
 }
 
 $(document).ready(function() {
+  //assesses previous performance and alerts player
+  var preWins = localStorage.getItem("previous-wins");
+  var preLosses = localStorage.getItem("previous-losses");
+  if (preLosses > preWins) {
+    alert("You did a terrible job last time.");
+  } else if (preWins > preLosses) {
+    alert("You did alright last time, why come back?");
+  }
+  //clears stored scores after message is displayed
+  localStorage.clear();
+
   //starts and resets game
   function initialize() {
     crystals = [];
     total = 0;
     setNumbers();
-   $("#total").hide();
-    $("#random-num").text("Number: "+ randomNumber);    
+    $("#total").hide();
+    $("#random-num").text("Number: " + randomNumber);
     $("#crystal-1").val(crystals[0]);
     $("#crystal-2").val(crystals[1]);
     $("#crystal-3").val(crystals[2]);
     $("#crystal-4").val(crystals[3]);
     console.log(crystals, randomNumber);
-
   }
-//can i store html elements in an array and then loop through them as I loop through crystal values?
+  //can i store html elements in an array and then loop through them as I loop through crystal values?
   //for (i=0; i<crystals.length; i ++){
-    
+
   //   $(".crystal").val(crystals[wouldnt this then be j from the other loop?]);
   // }
   initialize();
 
+  function check() {
+    if (total === randomNumber) {
+      //win logic and stores in local storage
+      wins += 1;
+      localStorage.setItem("previous-wins", wins);
+      $("#wins").text("Wins: " + wins);
+      alert("You win I guess. Not a very challenging game.");
+      initialize();
+    } else if (total > randomNumber) {
+      //loss logic and stores in local storage
+      losses += 1;
+      localStorage.setItem("previous-losses", losses);
+      $("#losses").text("Losses: " + losses);
+      alert("Garbage");
+      initialize();
+    }
+  }
 
-  function check(){
-  if (total === randomNumber) {
-    wins+=1
-    $("#wins").text("Wins: "+ wins);
-    alert("You win I guess. Not a very challenging game.");
-    initialize();
-  } else if (total > randomNumber) {
-    losses+=1
-    $("#losses").text("Losses: "+ losses);
-    alert("Garbage");
-    initialize();
-  };
-}
-
-
+  //button click function
   $(".button-con").on("click", ".crystal", function() {
     $("#total").show();
-    $("#total").text("Total: "+ total);
+    $("#total").text("Total: " + total);
     total += parseInt($(this).val());
-    $("#total").text("Total: "+ total);
-    check()
-
+    $("#total").text("Total: " + total);
+    check();
   });
-
 });

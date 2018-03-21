@@ -1,14 +1,15 @@
-body {
+html {
   background-color: #91aa9d;
 }
 
 header {
   text-align: center;
-  width: 80%;
+  width: 100%;
   margin: 0 auto 10px;
   font-size: 5.0vw;
   color: #3e606f;
-  background-color: #fcfff5;
+  background-color: beige;
+  border-bottom: 5px gray solid;
 }
 .container {
   text-align: center;
@@ -33,7 +34,7 @@ img {
 }
 .display {
   margin: 0 auto 3px;
-  font-size: 3.0vw;
+  font-size: 2.5vw;
 }
 
 .crystal{

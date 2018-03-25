@@ -10,10 +10,12 @@ function setNumbers() {
   //creates random number to guess
   randomNumber = Math.floor(Math.random() * (120 + 1 - 19)) + 19;
   //creates array of random values for buttons
+  var count = 0;
   while (crystals.length < 4) {
     var x = Math.floor(Math.random() * (12 + 1 - 1)) + 1;
     if (!crystals.includes(x)) {
       crystals.push(x);
+      $("#crystal-"+(count+1)).data("val", crystals[count++]);
     }
   }
 }
@@ -27,7 +29,8 @@ $(document).ready(function() {
   } else if (preWins > preLosses) {
     alert("You did alright last time, why come back?");
   }
-  //clears stored scores after message is displayed
+  //clears local storage after message is displayed to prevent erroneous results
+  //Is there a way to not clear if the person doesnt actually conmplete a game
   localStorage.clear();
 
   //starts and resets game
@@ -37,17 +40,10 @@ $(document).ready(function() {
     setNumbers();
     $("#total").hide();
     $("#random-num").text("Number: " + randomNumber);
-    $("#crystal-1").val(crystals[0]);
-    $("#crystal-2").val(crystals[1]);
-    $("#crystal-3").val(crystals[2]);
-    $("#crystal-4").val(crystals[3]);
+
     console.log(crystals, randomNumber);
   }
-  //can i store html elements in an array and then loop through them as I loop through crystal values?
-  //for (i=0; i<crystals.length; i ++){
 
-  //   $(".crystal").val(crystals[wouldnt this then be j from the other loop?]);
-  // }
   initialize();
 
   function check() {
@@ -72,7 +68,7 @@ $(document).ready(function() {
   $(".button-con").on("click", ".crystal", function() {
     $("#total").show();
     $("#total").text("Total: " + total);
-    total += parseInt($(this).val());
+    total += parseInt($(this).data("val"));
     $("#total").text("Total: " + total);
     check();
   });

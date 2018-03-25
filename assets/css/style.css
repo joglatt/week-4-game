@@ -10,11 +10,12 @@ header {
   color: #3e606f;
   background-color: beige;
   border-bottom: 5px gray solid;
+  padding:1%;
 }
 .container {
   text-align: center;
   width: 80%;
-  border: 1px black solid;
+  border: 1px bisque solid;
   margin: 0 auto 10px;
   background-color: #d1dbbd;
 }
@@ -42,4 +43,21 @@ img {
   width:20%;
   height:20%;
   margin:5px;
+  border:1px gray solid;
+}
+
+@media screen and (max-width: 800px) {
+  .crystal{
+    width:40%;
+    height:40%;
+  }
+  #text {
+    font-size: 3.5vw; 
+
+  }
+  .display {
+    margin: 0 auto 3px;
+    font-size:4.0vw;
+  }
+
 }
